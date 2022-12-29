@@ -1,7 +1,7 @@
-# arbitray precision number
+# arbitrary precision number
 
-**Arbitray Precision Number for Arithmatic operations.** <br>
-Number with arbitray precision (default precision 10^-2000), all arithmatic operations will be calculated to the limit of precision.
+**Arbitrary Precision Number for Arithmetic operations.** <br>
+Number with arbitrary precision (default precision 10^-2000), all arithmetic operations will be calculated to the limit of precision.
 <br>
 
 ## Project settings:
@@ -54,7 +54,7 @@ int main()
 ```
 
 ## Functions:
-Arithmatic operations: **+ - * / pow += -= *= /= ^=**<br>
+Arithmetic operations: **+ - * / pow += -= *= /= ^=**<br>
 Logic operations: **== != > >= < <=**<br>
 Base conversion: **convert_base(int new_base)**, new base in [2, 1e9]<br>
 Input from string: **parse(string no_string, int precision)**<br>
@@ -77,8 +77,8 @@ Output to string: **to_string(int base)**  base: 2/8/10/16<br>
 ```
 
 ## Future considerations:
-- Improve efficency, goal: reach 100M precision in the reasonable time
-- Make a command-line caculator
-- Add more math-operation, such as logrithim.
+- Improve efficiency, goal: reach 100M precision in the reasonable time
+- Make a command-line calculator
+- Add more math-operation, such as logarithm.
 ...
 
