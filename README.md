@@ -5,7 +5,7 @@ Number with arbitrary precision (default precision 10^-2000), all arithmetic ope
 <br>
 
 ## Project settings:
-Visual Studio: open CMakeLists.txt directly.<br>
+Visual Studio: open CMakeLists.txt directly.<br><br>
 Linux/WSL:<br>
 	cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug<br>
 	cd build/debug && make && ./ap_test<br>
