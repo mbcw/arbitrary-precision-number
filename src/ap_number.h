@@ -81,7 +81,7 @@ public:
 		*this = value;
 	}
 
-	Number(): Number(0) {}
+	Number() : Number(0) {}
 	template<class T> Number(T value) : Number(value, DEFAULT_PRECISION_IN_10, DEFAULT_BASE) {}
 	template<class T> Number(T value, int precision_in_10) : Number(value, precision_in_10, DEFAULT_BASE) {}
 	template<class T> Number pattern_new(T x) const { return Number(PatternNew::V, x, *this); }
@@ -702,7 +702,6 @@ protected:
 
 	int mul_single_digit(int& digit, int multiplier, int carry)
 	{
-		//assert(digit >= 0 && multiplier >= 0); 
 		long long r = (long long)digit * multiplier + carry;
 
 		carry = (int)(r / _base);
@@ -947,82 +946,6 @@ protected:
 
 		return exp;
 	}
-
-	//int parse_dec_number(Number& no, const char* no_str)
-	//{
-	//	const char* p = no_str;
-	//	no.clear();
-
-	//	bool neg_no = *p == '-';
-	//	if (*p == '-' || *p == '+')
-	//		p++;
-
-	//	bool has_dot = false;
-	//	const char* p_save = p;
-	//	while (*p && *p != 'e' && *p != 'E')
-	//	{
-	//		if (*p == '.')
-	//		{
-	//			// We can not forget that there is a '0' on the head of _digits...
-	//			no._ms_exp = int(p - p_save);
-	//			p++;
-	//			has_dot = true;
-	//			continue;
-	//		}
-
-	//		if (has_dot && exceed_precision(ls_exp()))
-	//			break;
-
-	//		int x = *p - '0';
-	//		if (x < 0 || x > 9)
-	//			throw std::invalid_argument{ "number string format error." };
-
-	//		p++;
-	//		no._digits.push_back(x);
-	//	}
-
-	//	if (!has_dot)
-	//		no._ms_exp = int(p - p_save);
-
-	//	while (*p && *p != 'e' && *p != 'E')
-	//		p++;
-
-	//	no.trim();
-
-	//	if (neg_no)
-	//		no *= -1;
-
-	//	return int(p - no_str);
-	//}
-
-	//int parse_dec_exp_number(const char* exp_str)
-	//{
-	//	auto p = exp_str;
-	//	if (*p != 'e' && *p != 'E')
-	//		return 0;
-
-	//	p++;
-	//	bool neg_exp = *p == '-';
-	//	if (*p == '-' || *p == '+')
-	//		p++;
-
-	//	int exp = 0;
-	//	while (*p)
-	//	{
-	//		int x = *p - '0';
-	//		if (x < 0 || x > 9)
-	//			throw std::invalid_argument{ "number string format error." };
-
-	//		exp *= 10;
-	//		exp += x;
-	//		p++;
-	//	}
-
-	//	if (neg_exp)
-	//		exp *= -1;
-
-	//	return exp;
-	//}
 
 	/*
 	Division Method
